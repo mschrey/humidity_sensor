@@ -2,18 +2,11 @@
  ESP12E--Client-Aussentemperatur
 
  Temperatur wird über angeschlossenen Sensor DS18B20 ausgelesen und per Url an einen Server uebertragen.
- Als Server (also Empfaenger) kann ebenfalls ein NodeMcu-Board verwendet werden.
- Ein Beispiel-Empfaenger empfehlen wir das Script "NodeMCU-Server-TFT-Temperatur" auf unser
- Projektseite. Dieses gibt die empfangene Temperatur als auch lokale Temperatur auf einem
- QVGA-Farbdisplay aus.
- Die Temperatur wird nur alle 15 Minuten übertragen um Energie zu sparen und Batterie
+ Die Temperatur wird nur alle 10 Minuten übertragen um Energie zu sparen und Batterie
  Betrieb zu ermöglichen. Zwischendurch legt sich das Board schlafen.
  
  Temperatursensor DS18B20 an Pin D2 
  
- Bezugsquelle Temperatursensor: Reichelt / Conrad / Amazon - http://amzn.to/2i3WlRX 
- Bezugsquelle NodeMCU Board: http://amzn.to/2iRkZGi
-
  Notwendige Lib:
  https://github.com/milesburton/Arduino-Temperature-Control-Library
  
@@ -41,7 +34,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 const char* ssid = "YOUR_WIFI_NAME";  //Hier SSID eures WLAN Netzes eintragen
 const char* password = "YOUR_WIFI_PASSWORD"; //Hier euer Passwort des WLAN Netzes eintragen
-const char* host = "IP_OF_WIFI_ACCESSPOINT"; //RaspberryPi - Server der die temperatur empfangen soll (Feste freie IP angeben)
+const char* host = "IP_OF_HUMIDITY_HUB"; //RaspberryPi - Server der die temperatur empfangen soll (Feste freie IP angeben)
 const int sleepzeit_Min=10;          //Wieviel Minuten soll das Modul nach der Übermittlung der Daten schlafen
 const int sleepzeitError_Min=1;      //Wieviel Minuten soll das Modul nach Verbindungsproblem schlafen
 
